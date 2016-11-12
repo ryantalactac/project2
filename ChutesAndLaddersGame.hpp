@@ -14,25 +14,29 @@
 using namespace std;
 
 // TO DO - change the default value to the number of your team members
-const int MIN_NUMBER_OF_PLAYERS = 2;
+const int MIN_NUMBER_OF_PLAYERS = 1;
 
 class ChutesAndLaddersGame {
 public:
-   // TODO: implement the constructor with all your team members
-   // constructor with the default value of 2 minimim players
-   ChutesAndLaddersGame(int nPlayers = MIN_NUMBER_OF_PLAYERS);
+    // TODO: implement the constructor with all your team members
+    // constructor with the default value of 1 minimim players
+    ChutesAndLaddersGame(int nPlayers = MIN_NUMBER_OF_PLAYERS);
+    
+    // TODO: implement the destructor
+    // destructor
+    ChutesAndLaddersGame(const ChutesAndLaddersGame& ob);
+    
+    ~ChutesAndLaddersGame();
+    
+    // accessors
+    // TO DO: implement the accessor to get the number Of Players
+    long getNumberOfPlayers() {
+        // TODO: implement this function properly
+        return numPlayers;
+        throw std::logic_error("not implemented yet");
+    }
+    string getWinner() {return winner;}
 
-   // TODO: implement the destructor
-   // destructor
-   ~ChutesAndLaddersGame();
-   
-   // accessors
-   // TO DO: implement the accessor to get the number Of Players
-   long getNumberOfPlayers() {
-      // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
-   }
-   string getWinner() { return winner; }
    
    // TODO: implement this function properly
    // reset the game - (1) this will reset the position of each player to zero
@@ -41,11 +45,24 @@ public:
    // TODO: implement this function properly
    // play the Chutes and Ladders game
    void playGame();
+    
 private:
    const int WINNING_POSITION = 100;
-   
-   string winner;       // the winner
+    long numPlayers = MIN_NUMBER_OF_PLAYERS;
+   string winner;// the winner
    GameBoard gameBoard; // the game board
-
+    ChutesAndLaddersGame *pon;
+    
+    ArrayQueue<Player> * arrPtr;
+    ArrayQueue<Player> playerQueue;
+    
+    Player * playPtr;
+    
+  
+    
+    
+    Player quePlayer;
+    int curPosition;
+    
    // TO DO: use ArrayQueue to store the players
 };

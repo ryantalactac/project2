@@ -17,6 +17,7 @@ const int MONTE_CARLO = 100;
 void checkGameBoard() {
    // Check if game board is constructed properly
    GameBoard theGameBoard;
+
    for (int ib = 0; ib < BOARD_SIZE; ib++) {
       switch (ib) {
          case GameBoard::ONE: // Ladder

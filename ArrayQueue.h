@@ -11,7 +11,8 @@ template <typename E>
 class ArrayQueue {
 	enum { DEF_CAPACITY = 100 };		// default queue capacity
 public:
-	ArrayQueue(int cap = DEF_CAPACITY);		// constructor from capacity
+	ArrayQueue(int cap = DEF_CAPACITY);// constructor from capacity
+    ~ArrayQueue();
 	int size() const;				// number of items in the stack
 	bool empty() const;				// is the stack empty?
 	const E& front() const;	// get the top element
@@ -33,7 +34,9 @@ template <typename E> int ArrayQueue<E>::size() const
 {
 	return n;
 }				// number of items in the queue
-
+template <typename E> ArrayQueue<E>::~ArrayQueue(){
+    delete[] Q;
+}
 template <typename E> bool ArrayQueue<E>::empty() const
 {
 	return (n == 0);

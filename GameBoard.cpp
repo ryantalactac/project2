@@ -12,6 +12,12 @@
 // Otherwise, player stays put at the landing square
 // TO DO: implement this method
 void GameBoard::buildBoard() {
-   // TODO: implement this function properly
+   // GameBoard c;
+   // ptr = & c;
+
+    
+    
+    // TODO: implement this function properly
+    
    throw std::logic_error("not implemented yet");
 }

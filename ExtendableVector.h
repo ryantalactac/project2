@@ -102,7 +102,7 @@ public:
       elements[index] = value;
       numberOfElements++;
    }
-   
+    friend class Gameboard;
 private:
    int capacity;               // current array size
    int numberOfElements;       // number of elements in vector

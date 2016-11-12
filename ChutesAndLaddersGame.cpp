@@ -14,15 +14,35 @@ using namespace std;
 // TODO: implement the constructor with all your team members
 // constructor with the default value of a minimum players
 ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
-   // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+    
+           //arrPtr = &playerQueue;
+    
+   
+        //arrPtr->enqueue(aPlayer);
+        //arrPtr->enqueue(bPlayer);
+    
+    
+    
+    // TODO: implement this function properly
+ //throw std::logic_error("not implemented yet");
 }
 
+ChutesAndLaddersGame::ChutesAndLaddersGame(const ChutesAndLaddersGame& ob){
+   
+    
+    pon = new ChutesAndLaddersGame;
+    pon = ob.pon;
+  
+    
+}
 // TODO: implement the destructor
 // destructor - dequeue players from the queue
 ChutesAndLaddersGame::~ChutesAndLaddersGame() {
+    //arrPtr->dequeue();
+    delete playPtr;
+    
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+  // throw std::logic_error("not implemented yet");
 }
 
 // TO DO: implement this function properly
@@ -31,7 +51,7 @@ ChutesAndLaddersGame::~ChutesAndLaddersGame() {
 //        Place all players at the figurative square zero
 void ChutesAndLaddersGame::resetGame() {
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+  // throw std::logic_error("not implemented yet");
 }
 
 // TO DO: implement this function properly
@@ -45,7 +65,51 @@ void ChutesAndLaddersGame::resetGame() {
 //    - If player lands on the winning square 100, game is over
 //    - playGame returns after congratulating and printing the winner's name
 void ChutesAndLaddersGame::playGame() {
-   // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+    playPtr = new Player("Ryan");
+    playerQueue.enqueue(*playPtr);
+    
+   
+    
+   // playerQueue.enqueue("Ryan");
+
+
+    while (winner == "no winner"){
+        
+    
+        try {
+            playerQueue.enqueue(*playPtr);
+            
+            quePlayer = playerQueue.front();
+            gameBoard.checkChutesLadders(quePlayer.rollDieAndMove());
+            curPosition = gameBoard.checkChutesLadders(quePlayer.rollDieAndMove());
+            
+            
+            playPtr->setPostion(curPosition);
+            
+            playerQueue.dequeue();
+            if (quePlayer.getPostion() == 100){
+                cout << quePlayer.getName() << " is the winner winner chicken dinner";
+                winner = "winner";
+                break;
+            }
+
+        } catch (range_error) {
+            cout << "input position is outside of the game board" <<endl;
+        }
+        
+    
+    
+    cout << "hello" << endl;
+        
+        while (playerQueue.empty()){
+            playerQueue.dequeue();
+        }
+        
+    
+   
+    }
+       // TODO: implement this function properly
+//   throw std::logic_error("not implemented yet");
    
 }
+
