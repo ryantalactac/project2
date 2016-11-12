@@ -36,10 +36,6 @@ public:
       position = p.getPostion();
        die = getDie();
        
-     //  ptr = new int;
-      // *ptr = getDie().getFaceValue();
-
-       
        // TODO: implement this function properly
       //throw std::logic_error("not implemented yet");
    }

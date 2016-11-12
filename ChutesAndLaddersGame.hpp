@@ -51,14 +51,12 @@ private:
     long numPlayers = MIN_NUMBER_OF_PLAYERS;
    string winner;// the winner
    GameBoard gameBoard; // the game board
-    ChutesAndLaddersGame *pon;
+    ChutesAndLaddersGame *chuteLadder;
     
     ArrayQueue<Player> * arrPtr;
     ArrayQueue<Player> playerQueue;
     
     Player * playPtr;
-    
-  
     
     
     Player quePlayer;

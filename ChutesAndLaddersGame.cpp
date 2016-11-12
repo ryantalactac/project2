@@ -15,13 +15,6 @@ using namespace std;
 // constructor with the default value of a minimum players
 ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
     
-           //arrPtr = &playerQueue;
-    
-   
-        //arrPtr->enqueue(aPlayer);
-        //arrPtr->enqueue(bPlayer);
-    
-    
     
     // TODO: implement this function properly
  //throw std::logic_error("not implemented yet");
@@ -30,8 +23,8 @@ ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
 ChutesAndLaddersGame::ChutesAndLaddersGame(const ChutesAndLaddersGame& ob){
    
     
-    pon = new ChutesAndLaddersGame;
-    pon = ob.pon;
+    chuteLadder = new ChutesAndLaddersGame;
+    chuteLadder = ob.chuteLadder;
   
     
 }
@@ -68,10 +61,6 @@ void ChutesAndLaddersGame::playGame() {
     playPtr = new Player("Ryan");
     playerQueue.enqueue(*playPtr);
     
-   
-    
-   // playerQueue.enqueue("Ryan");
-
 
     while (winner == "no winner"){
         

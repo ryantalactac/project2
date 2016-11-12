@@ -33,7 +33,7 @@ public:
         game.insert(i,i);
         }
         }
-       // game = BOARD_SIZE;
+       
        // TODO: implement this function properly
    if (false) throw std::logic_error("not implemented yet");
    }
@@ -44,11 +44,11 @@ public:
         ptr->buildBoard();
         
     }
-    int checkChutesLadders(int position) {
+    int checkChutesLadders(int position) {  //position is passed and
         if ((position < 0) || (position >= BOARD_SIZE)) {
             throw range_error("index out of bounds");
-        }
-        
+        }  //position is passed and checks to see if its larger then board
+        //checks to see if its a chute or a ladder and returns the appropriate int
         switch(position) {
             case 1:
                 return 38;

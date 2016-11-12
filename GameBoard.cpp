@@ -12,10 +12,7 @@
 // Otherwise, player stays put at the landing square
 // TO DO: implement this method
 void GameBoard::buildBoard() {
-   // GameBoard c;
-   // ptr = & c;
-
-    
+     
     
     // TODO: implement this function properly
     

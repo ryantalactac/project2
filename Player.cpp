@@ -7,22 +7,14 @@
 // TO DO: implement Player's assignment operator
 Player& Player::operator=(const Player& p) {
    
-        
-    
-   /// ptr = new int;
-    //*ptr = getDie().getFaceValue();
-
+   
    setName(p.playerName);
    setPostion(p.position);
    die = p.die;
-   // position = p.getPostion();
-
-    //playerName = p.getName();
+   
+   return *this;
     
-
-
-    // TODO: implement this function properly
-    return *this;
+    
    // throw std::logic_error("not implemented yet");
 }
 
